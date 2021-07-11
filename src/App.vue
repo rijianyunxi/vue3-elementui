@@ -1,30 +1,31 @@
 <template>
   <div id="nav">
-   <el-button>默认按钮</el-button>
-  <el-button @click="tt" type="primary">主要按钮</el-button>
-  <el-button type="success">成功按钮</el-button>
-  <el-button type="info">信息按钮</el-button>
-  <el-button type="warning">警告按钮</el-button>
-  <el-button type="danger">危险按钮</el-button>
+    <el-button>默认按钮</el-button>
+    <el-button @click="tt" type="primary">主要按钮</el-button>
+    <el-button type="success">成功按钮</el-button>
+    <el-button type="info">信息按钮</el-button>
+    <el-button type="warning">警告按钮</el-button>
+    <el-button type="danger">危险按钮</el-button>
   </div>
 </template>
 <script>
-import axios from './util/request.js'
-
+import axios from "./util/request.js";
 
 export default {
-  methods:{
-    tt(){
+  methods: {
+    tt() {
       console.log(1);
-      axios.get("https://localhost:3000").then(r=>{
-    console.log(r);
-}).catch(e=>{
-    console.log(e);
-})
-    }
-    }
-  }
-
+      axios
+        .get("https://localhost:3000")
+        .then((r) => {
+          console.log(r);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+  },
+};
 </script>
 
 
