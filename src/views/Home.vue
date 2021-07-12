@@ -37,7 +37,7 @@ export default {
   float: left;
   color: #ffffff;
   font-size: 22px;
-  text-align: center;
+  overflow: auto;
 }
 .r-container {
   /* width: 100%; */

@@ -1,6 +1,24 @@
 <template>
   <div class="welcome">
-    <div ref="ec" id="test"></div>
+    <el-row>
+      <el-col :span="8">
+        <div ref="one" id="ec"></div>
+      </el-col>
+      <el-col :span="8">
+        <div ref="two" id="ec"></div>
+      </el-col>
+      <el-col :span="8">
+        <div ref="three" id="ec"></div>
+      </el-col>
+    </el-row>
+    <!-- <el-row>
+      <el-col :span="8">
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="8">
+      </el-col>
+    </el-row> -->
   </div>
 </template>
 
@@ -11,11 +29,9 @@
 export default {
   name: "Welcome",
   mounted() {
-    let myChart = this.$echarts.init(this.$refs.ec);
+    // 11111
+    let myChart = this.$echarts.init(this.$refs.one);
     myChart.setOption({
-      title: {
-        text: "ECharts 入门示例",
-      },
       tooltip: {},
       xAxis: {
         data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
@@ -29,6 +45,52 @@ export default {
         },
       ],
     });
+    //22222
+    let myChart2 = this.$echarts.init(this.$refs.two);
+    myChart2.setOption({
+      xAxis: {
+        type: "category",
+        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      },
+      yAxis: {
+        type: "value",
+      },
+      series: [
+        {
+          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          type: "line",
+          smooth: true,
+        },
+      ],
+    });
+    //33333
+    let myChart3 = this.$echarts.init(this.$refs.three);
+    myChart3.setOption({
+      tooltip: {
+        trigger: "item",
+      },
+      series: [
+        {
+          name: "访问来源",
+          type: "pie",
+          radius: "50%",
+          data: [
+            { value: 1048, name: "搜索引擎" },
+            { value: 735, name: "直接访问" },
+            { value: 580, name: "邮件营销" },
+            { value: 484, name: "联盟广告" },
+            { value: 300, name: "视频广告" },
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: "rgba(0, 0, 0, 0.5)",
+            },
+          },
+        },
+      ],
+    });
   },
 };
 </script>
@@ -39,8 +101,7 @@ export default {
   width: 100%;
   background: #ffffff;
 }
-#test {
+#ec {
   height: 250px;
-  width: 400px;
 }
 </style>

@@ -6,6 +6,8 @@ import router from './router'
 import store from './store'
 import * as echarts from "echarts";
 
+console.log(process.env)
+
 const app = createApp(App);
 app.config.globalProperties.$echarts = echarts
 app.use(ElementPlus);
