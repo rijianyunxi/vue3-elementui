@@ -10,5 +10,4 @@ const app = createApp(App);
 app.use(ElementPlus);
 app.use(store);
 app.use(router);
-console.log("env")
 app.mount('#app')
