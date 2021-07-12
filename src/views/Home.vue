@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <!-- left nav -->
-    <div class="l-nav">左导航</div>
+    <div class="l-nav">
+      <TreeMenu />
+    </div>
     <!-- right container && right nav -->
     <div class="r-container">
       <div class="r-container-nav">右边上部导航</div>
@@ -13,8 +15,12 @@
 </template>
 
 <script>
+import TreeMenu from "../components/TreeMenu.vue";
 export default {
   name: "Home",
+  components: {
+    TreeMenu,
+  },
 };
 </script>
 
@@ -29,6 +35,9 @@ export default {
   width: 200px;
   background: rgb(0 21 41);
   float: left;
+  color: #ffffff;
+  font-size: 22px;
+  text-align: center;
 }
 .r-container {
   /* width: 100%; */
