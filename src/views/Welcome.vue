@@ -29,6 +29,11 @@
 export default {
   name: "Welcome",
   mounted() {
+    window.onresize = this.throttle(() => {
+      myChart.resize();
+      myChart2.resize();
+      myChart3.resize();
+    }, 300);
     // 11111
     let myChart = this.$echarts.init(this.$refs.one);
     myChart.setOption({
@@ -91,6 +96,20 @@ export default {
         },
       ],
     });
+  },
+  methods: {
+    throttle(todo, wait) {
+      let flag = true;
+      return function () {
+        if (flag) {
+          flag = false;
+          setTimeout(() => {
+            todo();
+            flag = true;
+          }, wait);
+        }
+      };
+    },
   },
 };
 </script>
