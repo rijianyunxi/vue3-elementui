@@ -10,19 +10,28 @@ const routes = [
     name: "home",
     path: "/",
     component: Home,
+    meta: {
+      title: "首页"
+    },
     redirect: "/welcome",
     children: [
       {
         name: "welcome",
-        path: "/welcome",
-        component: Welcome
+        path: "welcome",
+        component: Welcome,
+        meta: {
+          title: "欢迎体验"
+        },
       }
     ]
   },
   {
     name: "login",
     path: "/login",
-    component: Login
+    component: Login,
+    meta: {
+      title: "登陆"
+    },
   }
 ]
 

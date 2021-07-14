@@ -7,9 +7,9 @@
     <!-- right container && right nav -->
     <div class="r-container">
       <div class="r-container-nav">
-        <div class="mianbao">
+        <div class="breadcrumb">
           <i class="el-icon-s-fold"></i>
-          面包屑
+          <Breadcrumb />
         </div>
         <div class="user">
           <!-- <el-avatar
@@ -29,10 +29,12 @@
 
 <script>
 import TreeMenu from "../components/TreeMenu.vue";
+import Breadcrumb from "../components/Breadcrumb.vue";
 export default {
   name: "Home",
   components: {
     TreeMenu,
+    Breadcrumb,
   },
   mounted() {
     this.test();
@@ -90,6 +92,12 @@ export default {
   box-sizing: border-box;
   padding: 0 10px;
   justify-content: space-between;
+}
+.r-container-nav .breadcrumb {
+  display: flex;
+}
+.r-container-nav .breadcrumb i {
+  padding: 0 10px;
 }
 .r-container-nav .user {
   height: 50px;
