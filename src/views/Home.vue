@@ -51,7 +51,7 @@ export default {
           "https://www.fastmock.site/mock/c1c302e8baed9894c48c17e4738c092e/api/menu/list"
         )
         .then((r) => {
-          console.log(r.data);
+          // console.log(r.data);
           this.menuList = r.data.data;
         })
         .catch((e) => {

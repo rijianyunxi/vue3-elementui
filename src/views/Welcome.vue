@@ -1,5 +1,5 @@
 <template>
-  <div class="welcome">
+  <div class="welcome" v-test>
     <el-row>
       <el-col :span="8">
         <div ref="one" id="ec"></div>
@@ -11,14 +11,6 @@
         <div ref="three" id="ec"></div>
       </el-col>
     </el-row>
-    <!-- <el-row>
-      <el-col :span="8">
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="8">
-      </el-col>
-    </el-row> -->
   </div>
 </template>
 
@@ -28,6 +20,19 @@
 
 export default {
   name: "Welcome",
+  directives: {
+    test: {
+      mounted(el) {
+        console.log(el);
+      },
+      bind(el) {
+        console.log(el);
+      },
+      inserted(el, binding) {
+        console.log("inserted-el", el, binding);
+      },
+    },
+  },
   mounted() {
     window.onresize = this.throttle(() => {
       myChart.resize();

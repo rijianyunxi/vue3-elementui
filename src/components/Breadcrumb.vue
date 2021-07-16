@@ -18,7 +18,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$route.matched);
+    // console.log(this.$route.matched);
   },
 };
 </script>

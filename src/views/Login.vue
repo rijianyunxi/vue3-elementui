@@ -30,10 +30,22 @@
 </template>
 
 <script>
+// import focues from "../components/focues.js";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 export default {
   name: "Login",
+  // directives: {
+  //   test: {
+  //     bind(el) {
+  //       console.log(el);
+  //     },
+  //     inserted(el, binding) {
+  //       console.log("inserted-el", el, binding);
+  //     },
+  //   },
+  // },
+
   setup() {
     const router = useRouter();
     let username = ref("song");
